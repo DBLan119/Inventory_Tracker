@@ -96,34 +96,89 @@ QuanLyKho/
 
 ## 🚀 Getting Started | Bắt Đầu
 
-### Prerequisites | Yêu Cầu
-- Windows 10 or later
-- .NET 8.0 SDK or Runtime ([Download](https://dotnet.microsoft.com/download/dotnet/8.0))
-- Visual Studio 2022 or later (recommended)
+### Prerequisites | Yêu Cầu Hệ Thống
 
-### Installation | Cài Đặt
+#### Required | Bắt Buộc
+- **Operating System**: Windows 10 (version 1809 or later) / Windows 11
+- **.NET 8.0 SDK or Runtime**: [Download .NET 8.0](https://dotnet.microsoft.com/download/dotnet/8.0)
+  - For development: Install .NET 8.0 SDK
+  - For running only: .NET 8.0 Desktop Runtime is sufficient
+- **IDE** (Choose one):
+  - Visual Studio 2022 (Community/Professional/Enterprise) - Recommended
+  - JetBrains Rider 2023.3+
+  - VS Code with C# Dev Kit extension
+
+#### Optional | Tùy Chọn
+- **Git**: For version control ([Download Git](https://git-scm.com/downloads))
+- **Windows Terminal**: For better command-line experience
+
+### Installing Dependencies | Cài Đặt Dependencies
+
+#### Step 1: Install .NET 8.0 SDK
+
+**Vietnamese**: Cài đặt .NET 8.0 SDK
+
+1. Visit [.NET 8.0 Download Page](https://dotnet.microsoft.com/download/dotnet/8.0)
+2. Download ".NET 8.0 SDK" for Windows x64
+3. Run the installer and follow the wizard
+4. Verify installation:
+   ```bash
+   dotnet --version
+   # Should output: 8.0.x
+   ```
+
+#### Step 2: Install Visual Studio (Recommended)
+
+**Vietnamese**: Cài đặt Visual Studio (Khuyến nghị)
+
+1. Download [Visual Studio 2022 Community](https://visualstudio.microsoft.com/downloads/) (Free)
+2. During installation, select these workloads:
+   - ✅ **.NET desktop development**
+   - ✅ **Desktop development with C++** (optional, for advanced debugging)
+3. Individual components to verify:
+   - .NET 8.0 Runtime
+   - Windows 10/11 SDK
+   - WPF Designer
+
+#### Step 3: Verify NuGet Packages
+
+**Vietnamese**: Kiểm tra các NuGet packages
+
+This project uses the following NuGet packages (automatically restored):
+- `System.Text.Json` - JSON serialization/deserialization
+
+No additional manual package installation required. Packages will be restored automatically when you build the project.
+
+### Installation | Cài Đặt Ứng Dụng
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/warehouse-management-wpf.git
-   cd warehouse-management-wpf
+   git clone https://github.com/DBLan119/Inventory_Tracker.git
+   cd Inventory_Tracker
    ```
 
-2. **Open the solution**
+2. **Restore dependencies | Khôi phục dependencies**
+   ```bash
+   dotnet restore
+   ```
+   This will automatically download and install all required NuGet packages.
+
+3. **Open the solution**
    ```bash
    # Open with Visual Studio
    start QuanLyKho.sln
    
-   # Or use command line
-   dotnet restore
+   # Or open with VS Code
+   code .
    ```
 
-3. **Build the project**
+4. **Build the project**
    ```bash
    dotnet build
    ```
+   Or press `F6` in Visual Studio.
 
-4. **Run the application**
+5. **Run the application**
    ```bash
    # Using PowerShell script
    .\run.ps1
@@ -134,6 +189,23 @@ QuanLyKho/
    # Or using dotnet CLI
    dotnet run --project QuanLyKho/QuanLyKho.csproj
    ```
+   Or press `F5` in Visual Studio to run with debugging.
+
+### Troubleshooting | Xử Lý Sự Cố
+
+**Issue**: "SDK version not found" error  
+**Solution**: Make sure .NET 8.0 SDK is installed. Run `dotnet --list-sdks` to verify.
+
+**Issue**: Build errors in Visual Studio  
+**Solution**: Clean and rebuild the solution:
+```bash
+dotnet clean
+dotnet restore
+dotnet build
+```
+
+**Issue**: Application doesn't start  
+**Solution**: Check that you have .NET 8.0 Desktop Runtime installed. Try running from command line to see detailed error messages.
 
 ---
 
@@ -241,8 +313,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 👤 Author | Tác Giả
 
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
+**DBLan119**
+- GitHub: [@DBLan119](https://github.com/DBLan119)
+- Repository: [Inventory_Tracker](https://github.com/DBLan119/Inventory_Tracker)
 
 ---
 
